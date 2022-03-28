@@ -285,8 +285,6 @@ export default {
   name: "view-workout",
   setup() {
     // Create data / vars
-    const store = useStore();
-
     const data = ref(null);
     const dataLoaded = ref(null);
     const errorMsg = ref(null);

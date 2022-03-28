@@ -9,7 +9,7 @@
 import Navigation from "./components/Navigation.vue";
 import { ref } from "vue";
 import { supabase } from "./supabase/init";
-//import store from "./store/index";
+import store from "./store/index";
 import { useStore } from "vuex";
 export default {
   components: {
@@ -29,8 +29,7 @@ export default {
     // Runs when there is a auth state change
     // if user is logged in, this will fire
     supabase.auth.onAuthStateChange((_, session) => {
-      store.commit("setUser", session);
-      //store.methods.setUser(session);
+      store.methods.setUser(session);
       console.log(session);
       appReady.value = true;
     });
